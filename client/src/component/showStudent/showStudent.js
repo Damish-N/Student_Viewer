@@ -33,15 +33,10 @@ const rows = [
   createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
 
-export default function CreateStudent() {
+export default function ShowStudent() {
   const classes = useStyles();
 
-  const [student, setstudent] = useState({
-    regNo: 0,
-    studentName: "",
-    grade: "",
-    section: "",
-  });
+  
 
   return (
     <>
