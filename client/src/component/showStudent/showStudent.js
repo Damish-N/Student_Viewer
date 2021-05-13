@@ -41,7 +41,7 @@ export default function CreateStudent() {
     grade: "",
     section: "",
   });
-  
+
   return (
     <>
       <h2 className={classes.head}>All Students</h2>
