@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -22,8 +22,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function BasicTextFields() {
+export default function CreateStudent() {
   const classes = useStyles();
+
+  const [student, setStudent] = useState({
+    regNo: 0,
+    studentName: "",
+    grade: "",
+    section: "",
+  });
+
+  const changeState = function (event) {
+    console.log(event);
+  };
 
   return (
     <div>
@@ -33,10 +44,27 @@ export default function BasicTextFields() {
           id="outlined-basic"
           label="RegistrationNumber"
           variant="outlined"
+          value={student.regNo}
+          onChange={changeState}
         />
-        <TextField id="outlined-basic" label="Name" variant="outlined" />
-        <TextField id="outlined-basic" label="Grade" variant="outlined" />
-        <TextField id="outlined-basic" label="Section" variant="outlined" />
+        <TextField
+          id="outlined-basic"
+          label="Name"
+          variant="outlined"
+          value={student.studentName}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Grade"
+          variant="outlined"
+          value={student.grade}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Section"
+          variant="outlined"
+          value={student.section}
+        />
         <Button variant="contained" color="secondary">
           Crete Students
         </Button>
